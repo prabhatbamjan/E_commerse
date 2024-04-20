@@ -1,8 +1,13 @@
-const express= require("express");
+
 const mongoose= require("mongoose");
 const cors= require("cors");
 const  userRouter = require("./router/userRouter");
-;
+const express = require("express");
+const storeRoute = require("./router/store");
+const salesRoute = require("./router/sales");
+const cors = require("cors");
+const User = require("./models/users");
+
 
 const app= express();
 
@@ -21,7 +26,13 @@ mongoose.connect( process.env.MONGO_URI)
 app.use(express.json());
 app.use(express.urlencoded({extend : false}));
 
+// Store API
+app.use("/api/store", storeRoute);
 
+
+
+// Sales API
+app.use("/api/sales", salesRoute);
 //routes middleware
 app.use("/api/users",userRouter)
 
