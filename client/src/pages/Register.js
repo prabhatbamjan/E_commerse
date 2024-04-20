@@ -81,7 +81,7 @@ function Register() {
           <input name="email" type="email" placeholder="Email address" value={form.email} onChange={handleInputChange} />
           <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleInputChange} />
           <input name="phoneNumber" type="number" placeholder="Phone Number" value={form.phoneNumber} onChange={handleInputChange} />
-          <UploadImage uploadImage={uploadImage} />
+         
           <button type="submit">Sign up</button>
           <p>Already have an account? <Link to="/login">Sign in now</Link></p>
         </form>
